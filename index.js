@@ -25,6 +25,26 @@ async function playRaceEngine(character1, character2) {
     console.log(`🏁 Rodada ${round}`);
 
     //sortear bloco
+    let block = () => {
+      let random = Math.random();
+      let result;
+
+      switch (true) {
+        case random < 0.33:
+          result = "RETA";
+          break;
+        case random < 0.66:
+          result = "CURVA";
+          break;
+        default:
+          result = "CONFRONTO";
+          break;
+      }
+
+      return result;
+    };
+
+    console.log(`Bloco: ${block()}`);
   }
 }
 

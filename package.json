@@ -1,0 +1,21 @@
+{
+  "name": "simulador-de-corridas-do-mario-kart",
+  "version": "1.0.0",
+  "description": "Este é o primeiro projeto realizado a partir do Bootcamp de Node.js. O porjeot consiste em um simulador de Mario Kart em NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart/issues"
+  },
+  "homepage": "https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart#readme"
+}

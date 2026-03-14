@@ -1,5 +1,12 @@
 <h1>Desafio de projeto: Mario Kart.JS</h1>
 
+<h2>Como rodar o projeto?</h2>
+Digite o seguinte comando no terminal:
+
+```bash
+     node ./src/index.js
+```
+
   <table>
         <tr>
             <td>

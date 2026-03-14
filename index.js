@@ -1,19 +1,49 @@
-//personagens pre-determinados para o jogo
-const player1 = {
-  nome: "Mario",
-  velocidade: 4,
-  manobrabilidade: 3,
-  poder: 3,
-  pontos: 0,
-};
+//personagens do jogo
+const players = [
+  {
+    nome: "Mario",
+    velocidade: 4,
+    manobrabilidade: 3,
+    poder: 3,
+    escolhido: false,
+    pontos: 0,
+  },
+  { nome: "Luigi", velocidade: 3, manobrabilidade: 4, poder: 4, pontos: 0 },
+  {
+    nome: "Peach",
+    velocidade: 3,
+    manobrabilidade: 4,
+    poder: 2,
+    escolhido: false,
+    pontos: 0,
+  },
+  {
+    nome: "Yoshi",
+    velocidade: 2,
+    manobrabilidade: 4,
+    poder: 3,
+    escolhido: false,
+    pontos: 0,
+  },
+  {
+    nome: "Donkey Kong",
+    velocidade: 2,
+    manobrabilidade: 2,
+    poder: 5,
+    escolhido: false,
+    pontos: 0,
+  },
+  {
+    nome: "Bowser",
+    velocidade: 5,
+    manobrabilidade: 2,
+    poder: 5,
+    escolhido: false,
+    pontos: 0,
+  },
+];
 
-const player2 = {
-  nome: "Luigi",
-  velocidade: 3,
-  manobrabilidade: 4,
-  poder: 4,
-  pontos: 0,
-};
+var player1, player2; //jogadores que serao escolhidos pelo usuario
 
 //funcao para rolar dados
 async function rollDice() {
@@ -160,8 +190,37 @@ async function declareWinner(character1, character2) {
   }
 }
 
+//funcao para escolher players
+async function choosePlayer() {
+  //imprimindo personagens
+  console.log("🕹 Personagens 🕹");
+  for (let i = 0; i < players.length; i++) {
+    if (players[i].escolhido == false) {
+      console.log(`${i}. ${players[i].nome}`);
+    }
+  }
+
+  var readLineSync = require("readline-sync"); //para leitura no terminal
+  let escolha;
+
+  do {
+    //verifica se o que foi escolhido esta disponviel e se existe na lista
+    escolha = readLineSync.question("Digite o numero do personagem: ");
+  } while (escolha < 0 || escolha > 5 || players[escolha].escolhido == true);
+
+  players[escolha].escolhido = true; //marca como já escolhido
+
+  return players[escolha];
+}
+
 //funcao principal auto-invocavel
 (async function main() {
+  console.log("EScolha o seu jogador player 1:");
+  player1 = await choosePlayer();
+
+  console.log("Escolha o seu jogador player 2:");
+  player2 = await choosePlayer();
+
   console.log(
     `🏁🚨 Corrida entre ${player1.nome} e ${player2.nome} começando...\n`,
   );

@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart/issues"
   },
-  "homepage": "https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart#readme"
+  "homepage": "https://github.com/MariaClara-gs/Simulador-de-Corridas-do-Mario-Kart#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
